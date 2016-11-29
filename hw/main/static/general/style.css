@@ -1,0 +1,234 @@
+/***************************************************************
+**************************************************************** 
+****************************************************************/
+
+/*БАЗОВЫЕ*/
+
+html, body {
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: auto;
+}
+
+body {
+    padding-top: 50px;
+    background: #eee;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.selectable{
+    -moz-user-select: text;
+    -o-user-select:text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.margin_top_none{
+    margin-top: 0 !important;
+}
+.paddind_top_none{
+    padding-top: 0 !important;
+}
+
+
+
+/*АНИМАЦИЯ*/
+.anim{
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+/*АНИМАЦИЯ*/
+
+/*СООБЩЕНИЕ ПОЛЬЗОВАТЕЛЮ*/
+#user_message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.25);
+    height: 100%;
+    width: 100%;
+    z-index: 99995;
+}
+
+#user_message #message_block{
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 33.33333%;
+    background: #fff;
+    border: 1px solid #000;
+    overflow: hidden;
+    padding: 20px;
+}
+#user_message #message_block span{
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+#user_message #message_block div{
+    display: inline-block;
+    min-width: 50px;
+    position: relative;
+    line-height: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: inherit;
+    cursor: pointer;
+    background: #fff;
+    text-align: center;
+}
+#user_message #message_block div:hover{
+    background: #000;
+    color: #fff;
+}
+
+/*СООБЩЕНИЕ ПОЛЬЗОВАТЕЛЮ*/
+
+/***************************************************************
+**************************************************************** 
+***************************************************************/
+
+/*ХЕДЕР*/
+header{
+    display: block;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000; 
+    z-index: 99900;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+header *{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: default;
+}
+header .user_block{
+    display: inline-block;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+}
+header .logo{
+    width: 50px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+header .list,
+header .user_block .logout,
+header .user_block .login,
+header .add_rec{
+    cursor: pointer;
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+}
+header .list:hover,
+header .user_block .logout:hover,
+header .user_block .login:hover,
+header .add_rec:hover{
+    border-bottom: 2px solid #fff;
+}
+header .list:active,
+header .user_block .logout:active,
+header .user_block .login:active,
+header .add_rec:active{
+    background-color: #fff;
+    color: #000;
+}
+header .user_block .user_name,
+header .brand{
+    font-weight: 0;
+}
+
+header .add_rec{
+    width: 50px;
+    font-size: 20px;
+}
+/*ХЕДЕР*/
+
+/***************************************************************
+**************************************************************** 
+***************************************************************/
+
+body .content{
+    display: flexbox;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+/***************************************************************
+**************************************************************** 
+***************************************************************/
+
+
+/*ФУТЕР*/
+footer{
+    display: block;
+    position: relative;
+    background: #000;
+    min-height: 300px;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

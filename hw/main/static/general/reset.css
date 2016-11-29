@@ -1,0 +1,27 @@
+*{
+    /*отступы*/
+    margin: 0;
+    padding: 0;
+
+    /*стили общие*/
+    outline: none;
+    list-style: none;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+
+    /*текст*/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'din';
+    color: #000;
+
+    /*нельзя ничего выделять*/
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

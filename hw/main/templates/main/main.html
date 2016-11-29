@@ -1,0 +1,85 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container_list clearfix">
+
+        <!-- add new record -->
+        <div id="modal_window">
+        
+            <form id="form" class="clearfix" action="add" method="POST" enctype="multipart/form-data">
+                <div class="header clearfix">
+                    <h5>Add new record</h5>
+                    <div class="button anim" id="hide_modal_window">
+                        &#215;
+                    </div>
+                </div>
+                <div class="left_side">
+                    <div id="add_image" class="anim">+
+                        {{ add_form.image }}
+                        <div id="pre_img"></div>
+                    </div>
+                </div>
+                <div class="right_side">
+                    {% csrf_token %}
+                    {{ add_form.name }}
+                    {{ add_form.country }}
+                    {{ add_form.sportType }}
+                    {{ add_form.prizeCount }}
+                    {{ add_form.desc }}
+                </div>
+                <div class="footer clearfix">
+                    <button id="add_rec_button" class="anim" type="submit">
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- add new record -->
+
+        <div class="left col">
+            <div class="ext_info" id="left_bar_stick">
+                <h3>List {{ name }}</h3>
+                <p>
+                    В 1926 году магический зоолог Ньют Саламандер занимается классификацией фантастических зверей и существ. Он прибывает в Нью-Йорк с волшебным чемоданом, содержащим в себе некоторое количество опасных магических тварей и их естественные среды обитания. Когда эти существа сбегают из чемодана, американские волшебные власти из «Магического Конгресса Управления по Северной Америке» (МАКУСА) бросаются в погоню за Ньютом.
+                </p>
+            </div>
+        </div>
+        <div class="right col">
+    
+        {% for team in teams %}
+
+            <div class="list_obj clearfix">
+                <div class="image" style="background-image: url({% static team.imageUrl %})"></div>
+                <div class="data clearfix">
+                    <h5 class="name">{{ team.name   }}</h5>
+                    <div class="attr_block clearfix">
+                        <label>#Country: {{ team.country }}</label>
+                        <label>#Sport-type: {{ team.sportType }}</label>
+                        <label>#Prize-count: {{ team.prizeCount }}</label>
+                    </div>
+                    <p class="desc_short">
+                        {{ team.desc }}
+                    </p>
+                </div>
+                <a class="view anim" href="{% url 'single_object' team_id=team.id %}" target="_blank" >View</a>
+            </div>
+
+        {% endfor %}
+
+            <div id="loading_block"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'main/script.js' %}">
+    </script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registration/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="reg_login_container clearfix">
+        <h1>Welcome</h1>
+        <div class="reg_block clearfix">
+            <h5 class="block_name">Registration</h5>
+            <form action="login/register" method="POST" class="clearfix">
+                {% csrf_token %}
+                {{ registration_form }}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="login_block clearfix">
+            <h5 class="block_name">Log in</h5>
+            <form action="login/auth" method="POST" class="clearfix">
+                {% csrf_token %}
+                {{ login_form }}
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

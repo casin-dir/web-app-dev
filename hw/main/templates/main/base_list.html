@@ -1,0 +1,21 @@
+{% load static %}
+{% for team in teams %}
+
+    <div class="list_obj clearfix">
+        <div class="image" style="background-image: url({% static team.imageUrl %})"></div>
+        <div class="data clearfix">
+            <h5 class="name">{{ team.name   }}</h5>
+            <div class="attr_block clearfix">
+                <label>#Country: {{ team.country }}</label>
+                <label>#Sport-type: {{ team.sportType }}</label>
+                <label>#Prize-count: {{ team.prizeCount }}</label>
+            </div>
+            <p class="desc_short">
+                {{ team.desc }}
+            </p>
+        </div>
+        <a class="view anim" href="{% url 'single_object' team_id=team.id %}" target="_blank">View</a>
+    </div>
+{% empty %}
+N/A
+{% endfor %}
