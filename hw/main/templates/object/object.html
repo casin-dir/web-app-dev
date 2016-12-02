@@ -35,19 +35,15 @@
             <div class="control_info_board" id="right_side_bar">
                 <div class="list_users_block">
                     <h5 class="block_name">Users with us:</h5>
-                    <div class="list_users_container" id="users_list_container">
-                        <!-- {% for user in users %}
-                            <label class="user_name">{{ user.username }}</label>
-                        {% endfor %} -->
-                    </div>
+                    <div class="list_users_container" id="users_list_container">     </div>
                 </div>
-               
+                {% if authorized %}
                 <div class="control clearfix">
                     <h5 class="block_name">Your status</h5>
                     <div class="status" status-val="{{ status }}" id="user_status" >Accepted</div>
                     <div id="change_status_button" class="anim">Change</div>
                 </div>
-              
+                {% endif %}
             </div>
         </div>
     </div>

@@ -9,10 +9,11 @@
     
     <div class="container_list clearfix">
 
+        {% if authorized %}
         <!-- add new record -->
         <div id="modal_window">
         
-            <form id="form" class="clearfix" action="add" method="POST" enctype="multipart/form-data">
+            <form id="form_add" class="clearfix" enctype="multipart/form-data" name="form_add" method="POST">
                 <div class="header clearfix">
                     <h5>Add new record</h5>
                     <div class="button anim" id="hide_modal_window">
@@ -34,13 +35,12 @@
                     {{ add_form.desc }}
                 </div>
                 <div class="footer clearfix">
-                    <button id="add_rec_button" class="anim" type="submit">
-                        Add
-                    </button>
+                    <div id="add_rec_button" class="anim">Add</div>
                 </div>
             </form>
         </div>
         <!-- add new record -->
+        {% endif %}
 
         <div class="left col">
             <div class="ext_info" id="left_bar_stick">

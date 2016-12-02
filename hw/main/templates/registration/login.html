@@ -10,21 +10,28 @@
         <h1>Welcome</h1>
         <div class="reg_block clearfix">
             <h5 class="block_name">Registration</h5>
-            <form action="login/register" method="POST" class="clearfix">
+            <form name="registration_form" class="clearfix" 
+            id="registration_form">
                 {% csrf_token %}
                 {{ registration_form }}
-                <button type="submit">Register</button>
+                <div id="reg_user">Register</div>
             </form>
         </div>
         <div class="login_block clearfix">
             <h5 class="block_name">Log in</h5>
-            <form action="login/auth" method="POST" class="clearfix">
+            <form method="POST" name="login_form" class="clearfix"
+            id="login_form">
                 {% csrf_token %}
                 {{ login_form }}
-                <button type="submit">Log in</button>
+                <div id="login_user">Log in</div>
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'registration/script.js' %}">
+    </script>
 {% endblock %}
 
 

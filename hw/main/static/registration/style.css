@@ -54,8 +54,8 @@
     font-weight: bold; 
 }
 
-.reg_login_container .reg_block form button,
-.reg_login_container .login_block form button{
+.reg_login_container .reg_block form #reg_user,
+.reg_login_container .login_block form #login_user{
     display: inline-block;
     position: relative;
     max-width: 100%;
@@ -70,8 +70,8 @@
     float: right;
 }
 
-.reg_login_container .reg_block form button:hover,
-.reg_login_container .login_block form button:hover{
+.reg_login_container .reg_block form #reg_user:hover,
+.reg_login_container .login_block form #login_user:hover{
     background-color: #000;
     color: #fff;
 }

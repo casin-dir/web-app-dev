@@ -183,11 +183,11 @@
     background-color: rgba(0,0,0, .5);
     top: 0;
     left: 0;
-    z-index: 999999;
+    z-index: 9999;
 }
 
 /*форма*/
-#form{
+#form_add{
     display: block;
     max-width: 1000px;
     min-width: 1000px;
@@ -196,13 +196,13 @@
     position: relative;
     margin: auto;
 }
-#form .header{
+#form_add .header{
     display: block;
     position: relative;
     height: 50px;
     margin-top: 20px;
 }
-#form .header h5{
+#form_add .header h5{
     display: inline-block;
     position: relative;
     float: left;
@@ -211,7 +211,7 @@
     padding-left: 20px;
     font-weight: bold;
 }
-#form .header .button{
+#form_add .header .button{
     display: inline-block;
     position: relative;
     float: right;
@@ -229,31 +229,31 @@
     border: 1px solid #000;
     margin-right: 20px;
 }
-#form .header .button:hover{
+#form_add .header .button:hover{
     background-color: #000;
     color: #fff;
 }
 
 /*стороны*/
-#form .left_side,
-#form .right_side{
+#form_add .left_side,
+#form_add .right_side{
     display: block;
     position: relative;
     float: left;
     padding: 20px;
     padding-bottom: 0;
 }
-#form .left_side{
+#form_add .left_side{
     
     width: 390px;
 }
-#form .right_side{
+#form_add .right_side{
     width: calc(100% - 390px);
     padding-left: 0;
 }
 
 /*левая сторона*/
-#form .left_side #add_image{
+#form_add .left_side #add_image{
     display: block;
     position: relative;
     width: 350px;
@@ -266,11 +266,11 @@
     overflow: hidden;
     border: 1px solid #000;
 }
-#form .left_side #add_image:hover{
+#form_add .left_side #add_image:hover{
     background-color: #000;
     color: #fff;
 }
-#form .left_side #add_image #new_rec_img{
+#form_add .left_side #add_image #new_rec_img{
     display: block;
     position: relative;
     top: 0;
@@ -281,8 +281,9 @@
     -webkit-transform: scale(1000);
     opacity: 0;
     cursor: pointer;
+    z-index: 2;
 }
-#form .left_side #add_image #pre_img{
+#form_add .left_side #add_image #pre_img{
     display: none;
     position: absolute;
     top: 0;
@@ -292,15 +293,23 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    z-index: 20;
+    z-index: 1;
+}
+
+#form_add .left_side #add_image #pre_img.show{
+    display: block;
+}
+
+#form_add .left_side #add_image:hover #pre_img{
+    display: none;
 }
 
 /*правая сторона*/
-#form .right_side #new_rec_name,
-#form .right_side #new_rec_country,
-#form .right_side #new_rec_sportType,
-#form .right_side #new_rec_prizeCount,
-#form .right_side #new_rec_desc{
+#form_add .right_side #new_rec_name,
+#form_add .right_side #new_rec_country,
+#form_add .right_side #new_rec_sportType,
+#form_add .right_side #new_rec_prizeCount,
+#form_add .right_side #new_rec_desc{
     display: block;
     width: 100%;
     position: relative;
@@ -311,22 +320,22 @@
     color: #fff;
     padding-left: 20px;
 }
-#form .right_side #new_rec_name:focus,
-#form .right_side #new_rec_country:focus,
-#form .right_side #new_rec_sportType:focus,
-#form .right_side #new_rec_prizeCount:focus,
-#form .right_side #new_rec_desc:focus{
+#form_add .right_side #new_rec_name:focus,
+#form_add .right_side #new_rec_country:focus,
+#form_add .right_side #new_rec_sportType:focus,
+#form_add .right_side #new_rec_prizeCount:focus,
+#form_add .right_side #new_rec_desc:focus{
     background-color: #fff;
     color: #000;
 }
-#form .right_side #new_rec_desc{
+#form_add .right_side #new_rec_desc{
     height: 150px;
     padding: 20px;
     resize: none;
 }
 
 /*низ формы*/
-#form .footer{
+#form_add .footer{
     display: block;
     position: relative;
     height: 50px;

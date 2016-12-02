@@ -10,7 +10,7 @@ class AuthForm (AuthenticationForm):
 
     class Meta:
         fields = ['username', 'password']
-        model = User
+        # model = User
 
 class RegistrationForm (UserCreationForm):
     username = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={'placeholder': 'Username'}))
@@ -32,7 +32,7 @@ class RegistrationForm (UserCreationForm):
 class AddTeamForm(forms.Form):
     name = forms.CharField(required=True, 
         widget=forms.widgets.TextInput(
-            attrs={'placeholder': 'Name', 'id': 'new_rec_name'}           
+            attrs={'placeholder': 'Name', 'id': 'new_rec_name', 'maxlength': '49'}           
         ),
         error_messages={'required': 'Please enter a team name'},
         label='Team name'
@@ -40,13 +40,13 @@ class AddTeamForm(forms.Form):
       
     country = forms.CharField(
         widget=forms.widgets.TextInput(
-            attrs={'placeholder': 'Country', 'id': 'new_rec_country'}
+            attrs={'placeholder': 'Country', 'id': 'new_rec_country', 'maxlength': '29'}
         )
     )
     
     sportType = forms.CharField(required=True,
         widget=forms.widgets.TextInput(
-            attrs={'placeholder': 'Sport', 'id': 'new_rec_sportType'}            
+            attrs={'placeholder': 'Sport', 'id': 'new_rec_sportType', 'maxlength': '29'}            
         ),
         error_messages={'required': 'Please input sport name'},
         label='Sport'
@@ -54,7 +54,11 @@ class AddTeamForm(forms.Form):
     
     prizeCount = forms.IntegerField(required=True,
         widget=forms.widgets.NumberInput(
-            attrs={'placeholder': 'Prize count', 'id': 'new_rec_prizeCount'}
+            attrs={
+                'placeholder': 'Prize count',
+                'id': 'new_rec_prizeCount', 
+                'onKeyUp': 'if(this.value>999){this.value="999";}else if(this.value<0){this.value="0";}'
+            }
         ),
         error_messages={'required': 'Please input sport name'},
         label='Prize count'
@@ -62,7 +66,7 @@ class AddTeamForm(forms.Form):
     
     desc = forms.CharField(required=True,
         widget=forms.widgets.Textarea(
-            attrs={'placeholder': 'Description', 'id': 'new_rec_desc'}
+            attrs={'placeholder': 'Description', 'id': 'new_rec_desc', 'maxlength': '1999'}
         ),
         error_messages={'required': 'Please input short description'},
         label='Sport'

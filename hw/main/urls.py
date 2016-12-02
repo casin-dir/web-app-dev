@@ -22,8 +22,6 @@ urlpatterns = [
     url(r'^login/auth$', views.auth, name='auth_url'),
     url(r'^login$', views.LogRegView.as_view(), name='login_url'),
     url(r'^team/(?P<team_id>[0-9]+)', views.ObjectView.as_view(), name='single_object'),
-    
-    url(r'^add$',  views.add_obj, name='add_request'),
     url(r'^page/(?P<page_id>[0-9]+)', views.page_request, name='page_request'),
     url(r'^$', views.ObjectListView.as_view(), name='main_page'),
 ]
